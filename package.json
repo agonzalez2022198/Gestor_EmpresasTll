@@ -2,11 +2,11 @@
   "name": "gestor_empresastll",
   "version": "1.0.0",
   "description": "Gestor para empresas en la clase de taller",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["ESModule"],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -19,5 +19,9 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.2.0",
     "morgan": "^1.10.0"
-  }
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  },
+  "type": "module"
 }
