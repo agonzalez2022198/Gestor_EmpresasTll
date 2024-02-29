@@ -47,6 +47,7 @@ export const usuariosPost = async (req, res) => {
 };
 
 
+
 export const getUsuarioById = async (req, res= response) => {
 
     const {id} = req.params;

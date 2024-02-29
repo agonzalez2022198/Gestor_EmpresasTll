@@ -7,6 +7,7 @@ import morgan from 'morgan';
 import { dbConnection } from './mongo.js';
 
 import userRoutes from '../src/usuario/usuario.routes.js';
+import empresaRoutes from '../src/empresa/empresa.routes.js';
 
 //Routes en esta parte...
 
@@ -15,7 +16,8 @@ class Server{
         this.app = express();
         this.port = process.env.PORT;
         //Rutas
-        this.usuarioPath = '/api/usuario'
+        this.usuarioPath = '/api/usuario';
+        this.empresaPath = '/api/empresa';
 
 
         this.middlewares();
@@ -39,6 +41,7 @@ class Server{
 
     routes(){
         this.app.use(this.usuarioPath, userRoutes);
+        this.app.use(this.empresaPath, empresaRoutes);
     }
 
 
