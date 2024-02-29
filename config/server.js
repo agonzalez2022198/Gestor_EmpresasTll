@@ -6,6 +6,8 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import { dbConnection } from './mongo.js';
 
+import userRoutes from '../src/usuario/usuario.routes.js';
+
 //Routes en esta parte...
 
 class Server{
@@ -13,9 +15,12 @@ class Server{
         this.app = express();
         this.port = process.env.PORT;
         //Rutas
+        this.usuarioPath = '/api/usuario'
+
+
         this.middlewares();
         this.conectarDB();
-        //this.routes();
+        this.routes();
     }
 
 
@@ -29,6 +34,11 @@ class Server{
         this.app.use(express.json());
         this.app.use(helmet());
         this.app.use(morgan('dev'));
+    }
+
+
+    routes(){
+        this.app.use(this.usuarioPath, userRoutes);
     }
 
 
