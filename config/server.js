@@ -8,6 +8,7 @@ import { dbConnection } from './mongo.js';
 
 import userRoutes from '../src/usuario/usuario.routes.js';
 import empresaRoutes from '../src/empresa/empresa.routes.js';
+import authRoutes from '../src/auth/auth.routes.js';
 
 //Routes en esta parte...
 
@@ -18,7 +19,7 @@ class Server{
         //Rutas
         this.usuarioPath = '/api/usuario';
         this.empresaPath = '/api/empresa';
-
+        this.authPath = '/api/auth';
 
         this.middlewares();
         this.conectarDB();
@@ -42,6 +43,7 @@ class Server{
     routes(){
         this.app.use(this.usuarioPath, userRoutes);
         this.app.use(this.empresaPath, empresaRoutes);
+        this.app.use(this.authPath, authRoutes);
     }
 
 
