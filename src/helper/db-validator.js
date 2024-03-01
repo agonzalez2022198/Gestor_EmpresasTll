@@ -1,5 +1,6 @@
 import User from '../usuario/usuario.model.js';
 import Empresa from '../empresa/empresa.model.js';
+import Cliente from "../cliente/cliente.model.js";
 
 
 export const existenteEmail = async (correo = '') => {
@@ -22,5 +23,13 @@ export const existeEmpresaById = async (id = '') => {
     const existeEmp = await Empresa.findById(id);
     if (!existeEmp){
         throw new Error(`El ID: ${id} No existe`);
+    }
+}
+
+
+export const existeClienteById = async (id = '') => {
+    const existeCli = await Cliente.findById(id);
+    if (!existeCli){
+        throw new Error(`El cliente con ID: ${id} No existe`);
     }
 }
