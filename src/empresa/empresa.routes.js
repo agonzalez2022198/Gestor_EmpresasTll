@@ -7,7 +7,8 @@ import {
   empresasPost,
   empresaDelete,
   empresasGetAZ,
-  empresasGetZA
+  empresasGetZA,
+  reporteExcel
 } from "./empresa.controller.js";
 
 
@@ -27,6 +28,8 @@ const router = Router();
 router.get("/", empresasGetAZ);
 
 router.get("/za", empresasGetZA);
+
+router.get("/reporte", reporteExcel);
 
 router.get(
   "/:id",

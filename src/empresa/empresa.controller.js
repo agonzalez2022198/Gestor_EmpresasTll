@@ -1,6 +1,7 @@
 import { response, request } from 'express';
 import bcryptjs from 'bcryptjs';
 import Empresa from './empresa.model.js';
+import ExcelJS from 'exceljs';
 
 export const empresasGet = async ( req = request, res = response ) => {
 
@@ -133,3 +134,51 @@ export const empresasGetZA = async (req, res) => {
         });
     }
 };
+
+
+export const reporteExcel = async (req, res) => {
+
+    const query = {estado: true};
+
+    try {
+        const empresas = await Empresa.find (query);
+
+        const workbook = new ExcelJS.Workbook();
+        const workSheet = workbook.addWorksheet('Empresas');
+
+        workSheet.columns = [
+            { header: 'Nombre', key: 'nombre', width: 20 },
+            { header: 'Descripción', key: 'descripcion', width: 40 },
+            { header: 'Nivel de Impacto', key: 'nivelImpacto', width: 15 },
+            { header: 'Años de Trayectoria', key: 'añosTrayect', width: 20 },
+            { header: 'Categoría', key: 'categoriaEmp', width: 20 }
+        ];
+
+        empresas.forEach(empresa =>{
+            workSheet.addRow({
+                nombre: empresa.nombre,
+                descripcion: empresa.descripcion,
+                nivelImpacto: empresa.nivelImpacto,
+                añosTrayect: empresa.añosTrayect,
+                categoriaEmp: empresa.categoriaEmp
+            });
+        });
+
+
+        const buffer = await workbook.xlsx.writeBuffer();
+
+        res.set('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        res.set('Content-Disposition', 'attachment; filename="reporte_empresas.xlsx"');
+        res.send(buffer);
+
+
+
+    } catch (e) {
+        console.log('Error al generar el reporte Excel:', e);
+        res.status(500).json({
+            msg: 'Hubo un error al generar el reporte Excel',
+            e: e.message
+        });
+
+    }
+}
