@@ -6,6 +6,8 @@ import {
   getEmpresaById,
   empresasPost,
   empresaDelete,
+  empresasGetAZ,
+  empresasGetZA
 } from "./empresa.controller.js";
 
 
@@ -20,7 +22,11 @@ import { validarJWT } from "../middlewares/validar-jwt.js";
 
 const router = Router();
 
-router.get("/", empresasGet);
+//router.get("/", empresasGet);
+
+router.get("/", empresasGetAZ);
+
+router.get("/za", empresasGetZA);
 
 router.get(
   "/:id",

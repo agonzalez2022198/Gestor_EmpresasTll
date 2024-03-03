@@ -81,3 +81,55 @@ export const empresaDelete = async (req, res) => {
 
     res.status(200).json({msg:'Usuario a eliminar', empresa, empresaAutentificada, msg: 'Eliminado!!!' });
 }
+
+
+export const empresasGetAZ = async (req, res) => {
+    const { limite = 10, desde = 0 } = req.query;
+    const query = { estado: true };
+
+    try {
+        const [total, empresas] = await Promise.all([
+            Empresa.countDocuments(query),
+            Empresa.find(query)
+                .sort({ categoriaEmp: 1 }) // Ordena por la variable "categoria" de manera ascendente (de la 'a' a la 'z')
+                .skip(Number(desde))
+                .limit(Number(limite))
+        ]);
+
+        res.status(200).json({
+            total,
+            empresas
+        });
+    } catch (error) {
+        res.status(500).json({
+            msg: 'Hubo un error al obtener las empresas',
+            error: error.message
+        });
+    }
+};
+
+
+export const empresasGetZA = async (req, res) => {
+    const { limite = 10, desde = 0 } = req.query;
+    const query = { estado: true };
+
+    try {
+        const [total, empresas] = await Promise.all([
+            Empresa.countDocuments(query),
+            Empresa.find(query)
+                .sort({ categoriaEmp: -1 }) // Ordena por la variable "categoria" de manera descendente (de la 'z' a la 'a')
+                .skip(Number(desde))
+                .limit(Number(limite))
+        ]);
+
+        res.status(200).json({
+            total,
+            empresas
+        });
+    } catch (error) {
+        res.status(500).json({
+            msg: 'Hubo un error al obtener las empresas',
+            error: error.message
+        });
+    }
+};
