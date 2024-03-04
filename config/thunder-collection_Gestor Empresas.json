@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Gestor Empresas",
-    "dateExported": "2024-03-04T05:51:05.849Z",
+    "dateExported": "2024-03-04T07:19:01.332Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -121,6 +121,39 @@
             "modified": "2024-03-04T05:45:11.546Z",
             "headers": [],
             "params": [],
+            "tests": []
+        },
+        {
+            "_id": "973ddbc3-aaa6-4f98-b6f4-9bf2cdde6c97",
+            "colId": "87493054-b58f-4630-bd56-94a4de82eff8",
+            "containerId": "",
+            "name": "get clientes",
+            "url": "http://localhost:3000/api/cliente",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-03-04T07:12:16.723Z",
+            "modified": "2024-03-04T07:12:25.274Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c88102fc-6a9b-484b-8f10-182b075d209a",
+            "colId": "87493054-b58f-4630-bd56-94a4de82eff8",
+            "containerId": "",
+            "name": "put empresa",
+            "url": "http://localhost:3000/api/empresa/65e41a64bada2e8a30478f88",
+            "method": "PUT",
+            "sortNum": 100000,
+            "created": "2024-03-04T07:15:41.820Z",
+            "modified": "2024-03-04T07:18:19.566Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"ptz\",\n  \"descripcion\": \"asd\",\n  \"nivelImpacto\": \"ASD\", \n  \"añosTrayect\": \"12\",\n  \"categoriaEmp\": \"A\"\n}",
+                "form": []
+            },
             "tests": []
         }
     ]
