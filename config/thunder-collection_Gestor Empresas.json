@@ -1,0 +1,127 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Gestor Empresas",
+    "dateExported": "2024-03-04T05:51:05.849Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "15d31189-95bf-4836-9165-8e69ffeb2b7a",
+            "colId": "87493054-b58f-4630-bd56-94a4de82eff8",
+            "containerId": "",
+            "name": "usuario post",
+            "url": "http://localhost:3000/api/usuario",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-29T06:03:57.508Z",
+            "modified": "2024-02-29T06:19:00.209Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Adolfo González\",\n  \"correo\": \"agonzalez23@gmail.com\",\n  \"password\": \"1234567\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "f4399c33-bc7b-4976-a19e-221cfc9f45e2",
+            "colId": "87493054-b58f-4630-bd56-94a4de82eff8",
+            "containerId": "",
+            "name": "empresa post",
+            "url": "http://localhost:3000/api/empresa",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-02-29T07:42:14.295Z",
+            "modified": "2024-03-03T06:36:50.439Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Premium Bitches\",\n  \"descripcion\": \"Buenos ratos\",\n  \"nivelImpacto\": \"ASD\", \n  \"añosTrayect\": \"12\",\n  \"categoriaEmp\": \"A\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d5f48988-f225-42be-97dc-28fb12824389",
+            "colId": "87493054-b58f-4630-bd56-94a4de82eff8",
+            "containerId": "",
+            "name": "login",
+            "url": "http://localhost:3000/api/auth/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-03-01T05:03:22.356Z",
+            "modified": "2024-03-01T05:09:06.959Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"correo\": \"agonzalez23@gmail.com\",\n  \"password\": \"1234567\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6fd33cd8-db0c-4048-aac5-bea53bb55875",
+            "colId": "87493054-b58f-4630-bd56-94a4de82eff8",
+            "containerId": "",
+            "name": "cliente post",
+            "url": "http://localhost:3000/api/cliente",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-03-01T06:03:42.430Z",
+            "modified": "2024-03-01T06:06:50.702Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Elon\",\n  \"apellido\": \"Musk\",\n  \"correo\": \"elonmk12@gmail.com\",\n  \"number\": \"34567890\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "8a0288a6-4078-4a0d-aa80-251731ec57f3",
+            "colId": "87493054-b58f-4630-bd56-94a4de82eff8",
+            "containerId": "",
+            "name": "get empresasAZ",
+            "url": "http://localhost:3000/api/empresa",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-03-03T06:35:21.567Z",
+            "modified": "2024-03-03T06:40:19.303Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ed642a95-f55d-4e4f-930d-225043439655",
+            "colId": "87493054-b58f-4630-bd56-94a4de82eff8",
+            "containerId": "",
+            "name": "get empresasZA",
+            "url": "http://localhost:3000/api/empresa/za",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-03-03T06:43:16.084Z",
+            "modified": "2024-03-03T06:43:34.267Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "cdb1315f-e732-4ef6-a04f-08a3dc9a1911",
+            "colId": "87493054-b58f-4630-bd56-94a4de82eff8",
+            "containerId": "",
+            "name": "reporte excel",
+            "url": "http://localhost:3000/api/empresa/reporte",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-03-04T05:45:11.546Z",
+            "modified": "2024-03-04T05:45:11.546Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
